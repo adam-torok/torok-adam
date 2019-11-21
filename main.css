@@ -5,18 +5,19 @@ html {
 
   h1{
       font-size: 42px;
+      text-align: center;
   }
   h2{
     display: inline;
     padding-top: 0;
     padding-bottom: 0.5rem;
-    border-bottom: 1.5px solid rgba(0, 0, 0, 0.111);
   }
   h4{
     font-size: 21px;
     font-weight: lighter;
     color:black;
   }
+ 
   body {
     margin: 0;
     line-height: 23px;
@@ -110,15 +111,14 @@ html {
   nav ul li a.current {
     background: black;
   }
-  main {
-  }
+ 
 
-  section{
+  section:not(#section-1){
     border-bottom: 1px solid rgba(0,0,0,.1);
   }
 
   #section-1{
-      background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(pic1.jpg);
+    background: linear-gradient( rgb(19, 13, 10), rgba(0, 0, 0, 0.7), rgb(255, 255, 255)), url(pic1.jpg);
       background-size: cover;
       height: 100vh;
       filter: grayscale(100%);
@@ -131,19 +131,27 @@ html {
       
   }
   #section-introduce{
-      height: 60vh;
+      
       padding:2rem 2rem 2rem 2rem;
-      display: grid;
-      grid-template-columns: 30% 60%;
-      grid-gap: 2rem;
+      display: flex;
+      justify-content:center;
+      justify-items: center;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
   }
   .introduce-image{
     background-image: url(myProfilePicture.jpg);
-    background-position: center;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
     background-size: cover;
+    object-fit: cover;    
   }
   .introduce-text{
-    align-items: center;
+    text-align: center;
   }
   #section-skills{
       padding: 2rem;
@@ -190,7 +198,6 @@ html {
     max-height: 500px;
   }
   #section-contact{
-      height: 100vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-gap: 2rem;
@@ -241,7 +248,7 @@ html {
 
 
   
-  .item-1, 
+.item-1, 
 .item-2, 
 .item-3 {
   padding:0.5rem;
@@ -282,11 +289,56 @@ html {
   74.96%, 91.62% { left: 25%; opacity: 1; transform: scale(1.05) }
   100% { left: 110%; opacity: 0.2;  transform: scale(1)}
 }
-.button{
-  -webkit-appearance: push-button;
+.button{  
 
   text-decoration: none;
   color:initial;
   padding: 0.5rem;
   margin: 0.5rem;
+}
+.buttonaction {
+  color: #494949 !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ffffff;
+  padding: 20px;
+  border: 4px solid #494949 !important;
+  display: inline-block;
+  transition: all 0.4s ease 0s;
+  }
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) { 
+nav{
+  display: none;
+}
+.namecard{
+  padding: 0rem 2rem 0rem 2rem;
+}
+
+h1{
+  font-size:30px;
+}
+.skills-wrapper{
+  grid-template-columns: 1fr;
+}
+.wrapper{
+  display:grid;
+}
+}
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+  nav{
+    display: none;
+  }
+  .skills-wrapper{
+    grid-template-columns: 1fr;
+  }
+  .wrapper{
+    display:grid;
+  }
+}
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+
 }
